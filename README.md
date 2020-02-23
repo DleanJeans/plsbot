@@ -9,7 +9,7 @@ Grind Dank Memer bot on Discord, using your computer to type the commands and a 
 2. Download or clone this repo.
 3. Install prequisite Python libraries (with command-line in this repo folder on your machine):
 ```
-pip install -r requirements.txxt
+py -m pip install -r requirements.txt
 ```
 
 ### Meanwhile: Discord Server and Bot setup
@@ -25,7 +25,7 @@ pip install -r requirements.txxt
 #### Auto-bet
 Expand your bank capacity by spamming `pls bet` and `pls slots`. Default: 1 coin.
 
-Comes with advanced bet multipliers on losing to win coins (risky!).
+Comes with Martingale betting system (a bit risky!).
 
 #### Auto-scout
 Choose the best area, deposit all coins before in case of dying and withdraw some after (for auto-betting).
