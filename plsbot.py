@@ -89,7 +89,10 @@ async def withdraw_enough(coins):
     global last_balance
     last_balance = await read_balance()
     wallet, bank = last_balance
-    if wallet < coins and wallet + bank >= coins:
+    if coins == ALL:
+        await withdraw(coins, try_again_cooldown=True)
+        return True
+    elif wallet < coins and wallet + bank >= coins:
         await withdraw(coins - wallet, try_again_cooldown=True)
         return True
     elif wallet + bank < coins:
@@ -109,17 +112,17 @@ async def automate_bet():
                 else:
                     continue
 
-            msg = await bank(game, bet_amount, msg_content=TIE)
-            
             if game == SLOTS:
                 multimer.start(BET, BET_COOLDOWN)
+
+            msg = await bank(game, bet_amount, msg_content=TIE)
             
             if multiplier == DEFAULT_MULTIPLIER: continue
 
             won = await read_won_status(msg)
             if won == WON:
                 bet_amount = BET_AMOUNT
-            elif won == LOST:
+            elif won in [LOST, TIE]:
                 bet_amount *= multiplier
             
             if game == SLOTS:
