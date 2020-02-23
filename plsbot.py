@@ -105,7 +105,7 @@ async def automate_bet():
         amounts = [plslots_amount, plsbet_amount]
         
         for game, bet_amount, multiplier in zip(BET_GAMES, amounts, MULTIPLIERS_ON_LOST):
-            if not await withdraw_enough(bet_amount):
+            if WITHDRAW_IF_NOT_ENOUGH_FOR_BET and not await withdraw_enough(bet_amount):
                 bet_amount = BET_AMOUNT
                 if game == SLOTS and sum(last_balance) < plsbet_amount:
                     break

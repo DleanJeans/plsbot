@@ -18,8 +18,10 @@ py -m pip install -r requirements.txt
 6. Create a [bot and invite it.](https://discordpy.readthedocs.io/en/latest/discord.html)
 7. Copy the bot token to `BOT_TOKEN` inside `.env`
 
-
 ![](https://discordpy.readthedocs.io/en/latest/_images/discord_bot_user_options.png)
+
+### After everything is setup
+8. Run `plsbot.py` or `run.bat`, either should work
 
 ## Features
 #### Auto-bet
