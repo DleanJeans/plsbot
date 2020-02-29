@@ -1,7 +1,6 @@
 import discord
 
 from discord.ext import commands
-from const import *
 
 class PhoneControl(commands.Cog):
     def __init__(self, bot, multimer):

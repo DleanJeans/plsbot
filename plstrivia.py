@@ -2,7 +2,6 @@ import re
 import csv
 import discord
 
-
 class Trivia:
     def __init__(self, question, answers=[], correct_answer=None):
         self.question = question
@@ -56,6 +55,10 @@ def try_answer(new_trivia):
 def log_new(trivia):
     trivias.append(trivia)
     save_trivias()
+
+def read_worth(msg):
+    worth = re.findall('\d+', msg.embeds[0].fields[0].value)[0]
+    return int(worth)
 
 trivias = []
 load_trivias()

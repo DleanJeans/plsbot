@@ -30,6 +30,7 @@ AUTOMATE = 'automate'
 TIE = 'tie'
 WON = 'won'
 LOST = 'lost'
+COINS = 'coins'
 
 LAPTOP_COST = 1000
 
@@ -54,7 +55,7 @@ def try_convert_bool(value):
             value = False
     return value
 
-for key, value in dotenv_values().items():
+def try_convert_const(value):
     value = value.strip()
     if value.isdigit():
         value = int(value)
@@ -63,6 +64,10 @@ for key, value in dotenv_values().items():
     if ',' in str(value):
         value = list(map(str.strip, value.split(',')))
     value = try_convert_bool(value)
+    return value
+
+for key, value in dotenv_values().items():
+    value = try_convert_const(value)
     globals()[key] = value
 
 OTHERS = 'others'
