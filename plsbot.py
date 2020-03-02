@@ -328,10 +328,10 @@ async def read_balance():
     return balances
 
 async def withdraw(coins, try_again_cooldown=True):
-    await bank(WITHDRAW, coins, msg_content=WITHDRAW, try_again_cooldown=try_again_cooldown)
+    await bank(WITHDRAW, coins, msg_content=WITHDRAW+'n', try_again_cooldown=try_again_cooldown)
 
 async def deposit(coins, try_again_cooldown=True):
-    await bank(DEPOSIT, coins, msg_content=DEPOSIT, try_again_cooldown=try_again_cooldown)
+    await bank(DEPOSIT, coins, msg_content=DEPOSIT+'ed', try_again_cooldown=try_again_cooldown)
 
 async def bank(action, amount='', timeout=3, msg_content=None, try_again_cooldown=False):
     while True:
