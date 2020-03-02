@@ -94,6 +94,8 @@ async def automate():
 
 async def play_event():
     last_message = automated_channel.last_message
+    if not last_message:
+        return
     match = re.findall('Type `(.+)`', last_message.content)
     if match:
         match = match[0].replace(INVISIBLE_TRAP, '')
