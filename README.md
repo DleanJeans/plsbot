@@ -6,8 +6,8 @@ Grind Dank Memer bot on Discord, using your computer to type the commands and a 
 ### Downloading
 
 1. Download and setup [Python.](https://www.python.org/downloads/)
-2. Download or clone this repo.
-3. Install prequisite Python libraries (with command-line in this repo folder on your machine):
+2. [Download](https://github.com/DleanJeans/plsbot/archive/master.zip) or clone this repo.
+3. Install prequisite Python libraries with command-line in the downloaded folder (type `cmd` in the address bar):
 ```
 py -m pip install -r requirements.txt
 ```
